@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#calculator {
+    margin: 25vh 25vw;
+    width: 50vw;
+    height: 50vh;
+    padding: 1rem;
+    color: black;
+}
+
+.border {
+    --border: 2px;
+    --shadow: 15px;
+    --border-color: gray;
+    --left-right-color: gray;
+    --top-bottom-color: darkgray;
+    --angle: calc(var(--shadow) * 0.707);
+    
+    background:
+        linear-gradient(45deg, 
+                        transparent var(--angle),
+                        var(--left-right-color) var(--angle), 
+                        var(--left-right-color) calc(100% - var(--angle)), 
+                        transparent calc(100% - var(--angle)))
+                        right /var(--shadow) 100%,
+        linear-gradient(45deg, 
+                        transparent var(--angle), 
+                        var(--top-bottom-color) var(--angle), 
+                        var(--top-bottom-color) calc(100% - var(--angle)), 
+                        transparent calc(100% - var(--angle))) 
+                        bottom /100% var(--shadow),
+        linear-gradient(var(--border-color), 
+                        var(--border-color)) 
+                        top left /calc(100% - var(--shadow)) var(--border),
+        linear-gradient(var(--border-color), 
+                        var(--border-color))
+                        top left /var(--border) calc(100% - var(--shadow));
+    background-repeat: no-repeat;
+}
